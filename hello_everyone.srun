@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --job-name=hello_array
+#SBATCH --account=lcni
+#SBATCH --array=0-3
+
+data=(Eugene Oregon USA World)
+
+x=${data[$SLURM_ARRAY_TASK_ID]}
+
+echo hello ${x}
